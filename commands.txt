@@ -1,0 +1,68 @@
+#Task 1
+quarto create project website .
+ls -a
+
+#Task 2
+printf '\n/_site/\n__pycache__/\n' >> .gitignore
+tail -5 .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+git log --oneline
+git status
+
+#Task 3
+#edited _quarto.yml: set website title to "Box Office Numbers"
+grep title _quarto.yml
+
+#Task 4
+rm about.qmd
+edited _quarto.yml: removed about.qmd from the navbar, added budget-revenue.qmd
+("Budget and Revenue"), runtime-rating.qmd ("Runtime and Ratings"), bond.qmd ("The Bond Films")
+cat _quarto.yml 
+
+#Task 5
+# edited _quarto.yml: set theme to minty and added execute: freeze: auto
+cat _quarto.yml 
+
+#Task 6
+#edited index.qmd: title, dataset description, links to the three pages, AI usage line
+
+#Task 7
+touch budget-revenue qmd 
+#created budget-revenue.qmd: intro, scatter plot of budget vs revenue (echo: true),
+fig-cap, label fig-budget-revenue, referenced with @fig-budget-revenue
+ls
+cat budget-revenue.qmd 
+
+# Task 8
+touch runtime-rating.qmd
+# created runtime-rating.qmd: cited @fig-runtime-rating to the plot,
+# scatter plot of runtime vs rating (echo: true, fig-cap, label fig-runtime-rating),
+# table of mean rating by decade below the plot
+ls 
+cat runtime-rating.qmd 
+
+#Task 9
+touch bond.qmd
+#created a line plot of revenue over time for bond films
+ls 
+cat bond.qmd
+
+#Task 10
+quarto render
+ls 
+git status 
+git add _quarto.yml index.qmd budget-revenue.qmd runtime-rating.qmd bond.qmd styles.css _freeze
+git commit -m "Add site pages and freeze"
+git log --oneline
+
+#Task 11
+quarto publish gh-pages
+
+#Task 12
+
+#Task 13
+
+
+
+
