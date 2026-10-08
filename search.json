@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "budget-revenue.html",
+    "href": "budget-revenue.html",
+    "title": "Budget and Revenue",
+    "section": "",
+    "text": "Do bigger budget films earn more money? Figure 1 plots the production budget of a film against its revenue\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfilms = pd.read_csv(\"films.csv\")\n\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget(USD)\")\nplt.show\n\n\n\n\n\n\n\nFigure 1: Production budget against revenue"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Box Office Numbers",
+    "section": "",
+    "text": "This site shows a dataset of some well known films across multiple years with budgets, returns, runtimes and ratings. Here are the links to the analysis: - Budget and Revenue - Runtime and Ratings - The Bond Films AI usage:I used AI to help me create a cheatsheet of a commands list as preparation for the quiz. But wrote the commands myself. This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "runtime-rating.html",
+    "href": "runtime-rating.html",
+    "title": "Runtime and Ratings",
+    "section": "",
+    "text": "Do longer films get better ratings? Figure 1 plots runtime against ratings\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime (minutes)\")\nplt.ylabel(\"Rating (0 to 10)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Runtime (minutes) against rating\n\n\n\n\n\nMean rating by decade:\n\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64"
+  },
+  {
+    "objectID": "bond.html",
+    "href": "bond.html",
+    "title": "The Bond Films",
+    "section": "",
+    "text": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\nbond = films[films[\"franchise\"] == \"James Bond\"]\n\n\nbond_sorted = bond.sort_values(\"year\")\nplt.plot(bond_sorted[\"year\"], bond_sorted[\"revenue_musd\"])\nplt.xlabel(\"Year\")\nplt.ylabel(\"Worldwide revenue (USD in millions)\")\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Worldwide revenue of the Bond films over time (USD)"
+  }
+]
