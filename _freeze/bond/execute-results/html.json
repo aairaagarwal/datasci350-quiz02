@@ -1,0 +1,12 @@
+{
+  "hash": "b97029e7d5ba76e26ac15725ed1aeb40",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"The Bond Films\"\njupyter: python3\n---\n\n::: {#ae8ebe32 .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\nbond = films[films[\"franchise\"] == \"James Bond\"]\n```\n:::\n\n\n::: {#cell-fig-bond .cell execution_count=2}\n``` {.python .cell-code}\nbond_sorted = bond.sort_values(\"year\")\nplt.plot(bond_sorted[\"year\"], bond_sorted[\"revenue_musd\"])\nplt.xlabel(\"Year\")\nplt.ylabel(\"Worldwide revenue (USD in millions)\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Worldwide revenue of the Bond films over time (USD)](bond_files/figure-html/fig-bond-output-1.png){#fig-bond width=602 height=429}\n:::\n:::\n\n\n",
+    "supporting": [
+      "bond_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

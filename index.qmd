@@ -1,0 +1,11 @@
+---
+title: "Box Office Numbers"
+---
+This site shows a dataset of some well known films across multiple years with budgets, returns, runtimes and ratings. Here are the links to the analysis:
+- [Budget and Revenue](budget-revenue.qmd)
+- [Runtime and Ratings](runtime-rating.qmd)
+- [The Bond Films](bond.qmd)
+AI usage:I used AI to help me create a cheatsheet of a commands list as preparation for the quiz. But wrote the commands myself. 
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

@@ -1,0 +1,26 @@
+---
+title: "The Bond Films"
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+bond = films[films["franchise"] == "James Bond"]
+```
+
+
+
+```{python}
+#| echo: true
+#| label: fig-bond
+#| fig-cap: "Worldwide revenue of the Bond films over time (USD)"
+
+bond_sorted = bond.sort_values("year")
+plt.plot(bond_sorted["year"], bond_sorted["revenue_musd"])
+plt.xlabel("Year")
+plt.ylabel("Worldwide revenue (USD in millions)")
+plt.show()
+```

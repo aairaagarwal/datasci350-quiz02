@@ -1,0 +1,21 @@
+---
+title: "Budget and Revenue"
+jupyter: python3
+---
+Do bigger budget films earn more money? @fig-budget-revenue plots the production budget of a film against its revenue
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+films = pd.read_csv("films.csv")
+```
+
+```{python}
+#| echo: true 
+#| label: fig-budget-revenue
+#| fig-cap: "Production budget against revenue"
+
+plt.scatter(films["budget_musd"], films["revenue_musd"])
+plt.xlabel("Budget(USD)")
+plt.show
+```
